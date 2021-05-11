@@ -64,8 +64,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\BackGrounds.cs" />
+    <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\PlayerControl.cs" />
-    <Compile Include="Assets\Scripts\helloworld.cs" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Program Files/Unity/2019.4.24f1c1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -597,6 +598,9 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/lipei/Desktop/Unity/firstgame/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>C:/Users/lipei/Desktop/Unity/firstgame/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
       <HintPath>C:/Users/lipei/Desktop/Unity/firstgame/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
     </Reference>
@@ -659,6 +663,9 @@
     </Reference>
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>C:/Users/lipei/Desktop/Unity/firstgame/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>C:/Users/lipei/Desktop/Unity/firstgame/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
       <HintPath>C:/Users/lipei/Desktop/Unity/firstgame/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>

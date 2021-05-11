@@ -14,7 +14,6 @@ public class PlayerControl : MonoBehaviour
     public float maxSpeed = 5;
     private bool bFaceRight = true;
     private bool bGrounded = false;
-    private bool bJump = false;
     Transform mGroundCheck;
 
     
@@ -41,13 +40,7 @@ public class PlayerControl : MonoBehaviour
 
         bGrounded = Physics2D.Linecast(transform.position, mGroundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
-
-        if (Input.GetButtonDown("Jump") && bGrounded)  //检测到跳跃键和主角在Ground上时，起跳
-            bJump = true;
     }
-
-
-    
 
 
     private void FixedUpdate()
@@ -58,11 +51,13 @@ public class PlayerControl : MonoBehaviour
         if (Mathf.Abs(heroBody.velocity.x) > maxSpeed)  //速度大于最大速度时，将速度控制在最大速度
             heroBody.velocity = new Vector2(Mathf.Sign(heroBody.velocity.x) * maxSpeed, heroBody.velocity.y);
 
-        if(bJump)  //如果起跳，则向上加力
-        {
-            heroBody.AddForce(new Vector2(0f, jumpForce));
-            bJump = false;
-        }
+        bool bJump = false;
+
+        //if (Input.GetButtonDown("Jump") && bGrounded)  //检测到跳跃键和主角在Ground上时，起跳
+        if (bGrounded)
+            bJump = Input.GetButtonDown("Jump"); 
+            if(bJump)  //如果起跳，则向上加力
+                heroBody.AddForce(new Vector2(0f, jumpForce));
 
     }
 
@@ -74,4 +69,5 @@ public class PlayerControl : MonoBehaviour
         transform.localScale = theScale;
         bFaceRight = !bFaceRight;
     }
+
 }
